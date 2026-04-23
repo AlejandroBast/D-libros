@@ -1,0 +1,14 @@
+{% extends 'gestion/base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5 text-center">
+        <h2>¿Eliminar libro?</h2>
+        <p class="lead">¿Seguro que deseas eliminar <strong>{{ nombre }}</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger me-2">Sí, eliminar</button>
+            <a href="{% url 'lista_libros' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
